@@ -21,6 +21,7 @@ contract TestWUSDC is Test {
         assertEq(wusdc.name(), "Wrapped USDC");
         assertEq(wusdc.symbol(), "WUSDC");
         assertEq(wusdc.totalSupply(), 0);
+        assertEq(wusdc.decimals(), 6);
     }
 
     function testMintFailsNoUsdc(uint256 amount) public {
