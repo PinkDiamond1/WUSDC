@@ -55,6 +55,7 @@ contract TestWUSDC is Test {
         assertEq(wusdc.totalSupply(), amount);
         assertEq(wusdc.balanceOf(address(this)), amount);
         assertEq(usdcToken.balanceOf(address(this)), 0);
+        assertEq(usdcToken.balanceOf(address(wusdc)), amount);
     }
 
     function mintToSucceedsOneToOne(uint256 amount, address to) public {
@@ -70,6 +71,7 @@ contract TestWUSDC is Test {
         assertEq(wusdc.totalSupply(), amount);
         assertEq(wusdc.balanceOf(to), amount);
         assertEq(usdcToken.balanceOf(address(this)), 0);
+        assertEq(usdcToken.balanceOf(address(wusdc)), amount);
     }
 
     function testRedeemSucceedsOneToOne(uint256 amount) public {
@@ -84,6 +86,7 @@ contract TestWUSDC is Test {
 
     function testRedeemToSucceedsOneToOne(uint256 amount, address to) public {
         vm.assume(to != address(0));
+        vm.assume(usdcToken.balanceOf(to) == 0);
 
         mintToSucceedsOneToOne(amount, to);
 
