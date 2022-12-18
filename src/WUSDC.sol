@@ -18,6 +18,11 @@ contract WUSDC is ERC20("Wrapped USDC", "WUSDC") {
     /// @notice emitted on redeem, redeemer is msg.sender
     event Redeem(address indexed redeemer, uint256 amount);
 
+    /// @notice return decimals for WUSDC
+    function decimals() public pure override returns (uint8) {
+        return 6;
+    }
+
     /// ---------------- Mint Logic ----------------
 
     /// @notice mint WUSDC with USDC
