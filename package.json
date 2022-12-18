@@ -1,0 +1,11 @@
+{
+  "name": "wusdc",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:foundry-rs/forge-template.git",
+  "author": "Elliot <elliotfriedman3@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@openzeppelin/contracts": "^4.8.0"
+  }
+}
