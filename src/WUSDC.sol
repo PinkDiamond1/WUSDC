@@ -6,6 +6,7 @@ import {SafeERC20} from "@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol
 
 /// Wrapper contract around USDC. Not to be used anywhere, or by anyone...
 /// If you do use it, do so at your own risk.
+/// @author Elliot Friedman
 contract WUSDC is ERC20("Wrapped USDC", "WUSDC") {
     using SafeERC20 for IERC20;
 
